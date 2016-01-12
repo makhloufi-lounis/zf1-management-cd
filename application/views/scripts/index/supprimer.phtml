@@ -1,0 +1,15 @@
+<?php
+$this->title = "Supprimer un album";
+$this->headTitle($this->title);
+?>
+<p>Êtes-vous sûr de vouloir supprimer
+    '<?php echo $this->escape($this->album['titre']); ?>' de
+    '<?php echo $this->escape($this->album['artiste']); ?>' ?
+</p>
+<form action="<?php echo $this->url(array('action'=>'supprimer')); ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $this->album['id']; ?>" />
+        <input type="submit" name="supprimer" value="Oui" />
+        <input type="submit" name="supprimer" value="Non" />
+    </div>
+</form>
